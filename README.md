@@ -6,7 +6,7 @@ This code implements the get_next_line function, which reads a line of text from
 3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function
 4. Save file
 5. Compile with "gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c"
-6. Execute code "./a.out fd.txt"
+6. Execute code "./a.out fd0.txt"
 
 					TO TEST BONUS PART
 1. Download the repository
@@ -14,7 +14,7 @@ This code implements the get_next_line function, which reads a line of text from
 3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function
 4. Save file
 5. Compile with "gcc -Wall -Werror -Wextra get_next_line_bonus.c get_next_line_utils_bonus.c"
-6. Execute code "./a.out fd.txt"
+6. Execute code "./a.out fd1.txt fd2.txt fd3.txt"
 
 ----------------------------------------------------------------------------------------------------------------
 					EXPLANATION WITH A METAPHORE
