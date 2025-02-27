@@ -1,5 +1,6 @@
 # Get_next_line
 This code implements the get_next_line function, which reads a line of text from a file, one line at a time, until the end of the file.
+
 					TO TEST MANDATORY PART
 1. Download the repository
 2. Open get_next_line.c
@@ -30,8 +31,8 @@ extract_line: This assistant extracts the complete sentence from the chalkboard 
 get_full_line: This is the final step: clearing the chalkboard and ensuring there’s space for the next reading.
 ---------------------------------------------------------------------------------------------------------------
 
-						PROJECT OVERVIEW
-	5 functions:
+					PROJECT OVERVIEW
+5 functions:
 1. GET_NEXT_LINE
 Calls the other functions to read the file in blocks and return one line at a time.
  buff_data is a temporary memory that holds data between reads.
@@ -90,12 +91,13 @@ b. Updates the buffer by removing the extracted line.
 c. If there’s no more data, sets the buffer to NULL.
 d. Returns the line ready for use.
 
-	5 utils functions"
+5 utils functions"
 1. int	ft_strlen;
 2. int	*ft_strchr;
 3. char	*ft_strjoin;
 4. har	*ft_strdup;
 5. char	*ft_strncpy;
+
 						MEMORY ALLOCATION
 Static buffer array (buff_data):
 
