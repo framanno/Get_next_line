@@ -1,13 +1,43 @@
 # Get_next_line
 This code implements the get_next_line function, which reads a line of text from a file, one line at a time, until the end of the file.
-5 functions:
+					TO TEST MANDATORY PART
+1. Download the repository
+2. Open get_next_line.c
+3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function
+4. Save file
+5. Compile with "gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c"
+6. Execute code "./a.out fd.txt"
 
+					TO TEST BONUS PART
+1. Download the repository
+2. Open get_next_line_bonus.c
+3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function
+4. Save file
+5. Compile with "gcc -Wall -Werror -Wextra get_next_line_bonus.c get_next_line_utils_bonus.c"
+6. Execute code "./a.out fd.txt"
+
+----------------------------------------------------------------------------------------------------------------
+					EXPLANATION WITH A METAPHORE
+Metaphor: The Librarian and the Giant Book
+Imagine you are a librarian who has to read a very large book (the file) aloud, but you can only read a limited number of characters at a time (BUFFER_SIZE). Additionally, you have a chalkboard on which you can write the words already read but not yet spoken aloud (buff_data).
+
+Your goal is to read the book line by line and deliver each complete line to the listener. However, you might not immediately find a complete sentence that is ready to read, so you must keep track of what you’ve read so far and complete it in the next reading.
+
+get_next_line: You, the librarian, call upon your assistants to read and manage the data.
+read_and_buffer: This is your assistant who takes the book and reads it piece by piece, adding it to the chalkboard if necessary.
+read_until_eol: This helper reads the book and waits to find a point (the \n character) because that means the sentence is complete.
+extract_line: This assistant extracts the complete sentence from the chalkboard and writes it on a note to be delivered.
+get_full_line: This is the final step: clearing the chalkboard and ensuring there’s space for the next reading.
+---------------------------------------------------------------------------------------------------------------
+
+						PROJECT OVERVIEW
+	5 functions:
 1. GET_NEXT_LINE
 Calls the other functions to read the file in blocks and return one line at a time.
  buff_data is a temporary memory that holds data between reads.
  If the file is finished, it frees everything and returns NULL.
 
-						Procedure:
+	Procedure:
 Initial call.
 
 a. The file is open and the buffer is empty.
@@ -27,7 +57,7 @@ Reads a chunk of data from the file and adds it to the existing buffer.
 It uses a temporary buffer to manage the read operation.
 It reads until it finds a newline (\n). Returns the updated buffer.
 
-						Procedure:
+	Procedure:
 a. The buffer is empty or contains partial data.
 b. The function allocates a temporary buffer and reads a block of data.
 c. The data is merged with what’s already in buff_data.
@@ -38,7 +68,7 @@ Reads data in blocks until it finds \n or the end of the file.
 It uses read() to get data and adds it to the main buffer.
 If \n is found, the loop ends.
 
-						Procedure:
+	Procedure:
 a. First cycle:
 buff_data is empty.
 A chunk of the file is read and stored.
@@ -59,19 +89,13 @@ a. Calls extract_line to get the complete line.
 b. Updates the buffer by removing the extracted line.
 c. If there’s no more data, sets the buffer to NULL.
 d. Returns the line ready for use.
-----------------------------------------------------------------------------------------------------------------
-					EXPLANATION WITH A METAPHORE
-Metaphor: The Librarian and the Giant Book
-Imagine you are a librarian who has to read a very large book (the file) aloud, but you can only read a limited number of characters at a time (BUFFER_SIZE). Additionally, you have a chalkboard on which you can write the words already read but not yet spoken aloud (buff_data).
 
-Your goal is to read the book line by line and deliver each complete line to the listener. However, you might not immediately find a complete sentence that is ready to read, so you must keep track of what you’ve read so far and complete it in the next reading.
-
-get_next_line: You, the librarian, call upon your assistants to read and manage the data.
-read_and_buffer: This is your assistant who takes the book and reads it piece by piece, adding it to the chalkboard if necessary.
-read_until_eol: This helper reads the book and waits to find a point (the \n character) because that means the sentence is complete.
-extract_line: This assistant extracts the complete sentence from the chalkboard and writes it on a note to be delivered.
-get_full_line: This is the final step: clearing the chalkboard and ensuring there’s space for the next reading.
----------------------------------------------------------------------------------------------------------------
+	5 utils functions"
+1. int	ft_strlen;
+2. int	*ft_strchr;
+3. char	*ft_strjoin;
+4. har	*ft_strdup;
+5. char	*ft_strncpy;
 						MEMORY ALLOCATION
 Static buffer array (buff_data):
 
@@ -102,5 +126,3 @@ Memory allocation failure:
 Whenever malloc is called, the code checks if the allocation was successful. If not, it returns NULL immediately, indicating an error.
 
 For instance, if malloc fails in extract_line, the function returns NULL.
-
-
