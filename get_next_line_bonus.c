@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmanno <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:26:14 by fmanno            #+#    #+#             */
-/*   Updated: 2025/02/25 16:48:52 by fmanno           ###   ########.fr       */
+/*   Updated: 2025/03/04 08:59:45 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,41 +109,44 @@ char	*get_full_line(char **buff_data)
 	return (line);
 }
 
-/*
-int	main()
-	{
-		int fd1, fd2, fd3;
-		char *line;
-	
-		fd1 = open("fd1.txt", O_RDONLY);
-		fd2 = open("fd2.txt", O_RDONLY);
-		fd3 = open("fd3.txt", O_RDONLY);
-	
-		if (fd1 == -1 || fd2 == -1 || fd3 == -1)
-		{
-			perror("Errore nell'apertura dei file");
-			return (1);
-		}
-	
-		printf("===== LETTURA FILE MULTIPLI =====\n");
-	
-		while (1)
-		{
-			line = get_next_line(fd1);
-			if (!line) break;
-			printf("File 1: %s", line);
-			free(line);
-	ak;
-			printf("File 3: %s", line);
-			free(line);
-		}
-	
-		close(fd1);
-		close(fd2);
-		close(fd3);
-	
-		printf("===== FINE DEL TEST =====\n");
-	
-		return (0);
+int main(void)
+{
+    int fd1, fd2, fd3;
+    char *line;
+
+    fd1 = open("fd1.txt", O_RDONLY);
+    fd2 = open("fd2.txt", O_RDONLY);
+    fd3 = open("fd3.txt", O_RDONLY);
+
+    if (fd1 == -1 || fd2 == -1 || fd3 == -1)
+    {
+        perror("Errore nell'apertura dei file");
+        return (1);
+    }
+
+    printf("===== LETTURA FILE MULTIPLI =====\n");
+
+    while (1)
+    {
+        line = get_next_line(fd1);
+        if (!line) break;
+        printf("File 1: %s", line);
+        free(line);
+
+        line = get_next_line(fd2);
+        if (!line) break;
+        printf("File 2: %s", line);
+        free(line);
+
+        line = get_next_line(fd3);
+        if (!line) break;
+        printf("File 3: %s", line);
+        free(line);
+    }
+    close(fd1);
+    close(fd2);
+    close(fd3);
+
+    printf("===== FINE DEL TEST =====\n");
+    return (0);
 }
-*/

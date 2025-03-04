@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmanno <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:25:39 by fmanno            #+#    #+#             */
-/*   Updated: 2025/02/25 16:25:42 by fmanno           ###   ########.fr       */
+/*   Updated: 2025/03/04 09:04:14 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,13 +107,12 @@ char	*get_full_line(char **buff_data)
 	*buff_data = leftover_data;
 	return (line);
 }
-/*
 int main(void)
 {
     int fd;
     char *line;
 
-    fd = open("fd.txt", O_RDONLY);
+    fd = open("fd0.txt", O_RDONLY);
     if (fd == -1)
     {
         perror("Errore nell'apertura del file");
@@ -134,4 +133,3 @@ int main(void)
 
     return (0);
 }
-*/
