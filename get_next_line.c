@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:25:39 by fmanno            #+#    #+#             */
-/*   Updated: 2025/03/04 09:06:41 by root             ###   ########.fr       */
+/*   Updated: 2025/03/04 11:11:29 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
+//read and put in the buffer
 char	*read_and_buffer(int fd, char *buff_data)
 {
 	char	*temp_buffer;

@@ -4,7 +4,7 @@ This code implements the get_next_line function, which reads a line of text from
 					TO TEST MANDATORY PART
 1. Download the repository
 2. Open get_next_line.c
-3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function
+3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function)
 4. Save file
 5. Compile with "gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c"
 6. Execute code "./a.out fd0.txt"
@@ -12,7 +12,7 @@ This code implements the get_next_line function, which reads a line of text from
 					TO TEST BONUS PART
 1. Download the repository
 2. Open get_next_line_bonus.c
-3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function
+3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function)
 4. Save file
 5. Compile with "gcc -Wall -Werror -Wextra get_next_line_bonus.c get_next_line_utils_bonus.c"
 6. Execute code "./a.out fd1.txt fd2.txt fd3.txt"
@@ -99,15 +99,26 @@ d. Returns the line ready for use.
 
 5 utils functions"
 1. int	ft_strlen;
+Function that returns the length of a string excluding the null terminator.
+
 2. int	*ft_strchr;
+Function that finds the first occurrance of a character in a string and returns a pointer to it, or NULL if not find.
+
 3. char	*ft_strjoin;
+Function that joins strings with separator.
+
 4. har	*ft_strdup;
+Function that "duplicates" a string:  allocates memory and copies the source string to new memory.
+
 5. char	*ft_strncpy;
+Function that copies up to n characters from source string to destination string.
 
 						MEMORY ALLOCATION
 Static buffer array (buff_data):
 
-This array is defined as static char *buff_data[1024];, which means it is allocated once and persists for the lifetime of the program. Each element of this array is used to store buffered data for different file descriptors.
+This array is defined as static char *buff_data[1024];, which means it is allocated once and persists for the lifetime of the program. 
+
+Each element of this array is used to store buffered data for different file descriptors.
 
 Dynamic allocation in read_and_buffer:
 
