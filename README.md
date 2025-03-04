@@ -26,9 +26,13 @@ Imagine you are a librarian who has to read a very large book (the file) aloud, 
 Your goal is to read the book line by line and deliver each complete line to the listener. However, you might not immediately find a complete sentence that is ready to read, so you must keep track of what you’ve read so far and complete it in the next reading.
 
 get_next_line: You, the librarian, call upon your assistants to read and manage the data.
+
 read_and_buffer: This is your assistant who takes the book and reads it piece by piece, adding it to the chalkboard if necessary.
+
 read_until_eol: This helper reads the book and waits to find a point (the \n character) because that means the sentence is complete.
+
 extract_line: This assistant extracts the complete sentence from the chalkboard and writes it on a note to be delivered.
+
 get_full_line: This is the final step: clearing the chalkboard and ensuring there’s space for the next reading.
 ---------------------------------------------------------------------------------------------------------------
 
