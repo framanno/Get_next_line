@@ -45,6 +45,7 @@ Calls the other functions to read the file in blocks and return one line at a ti
  If the file is finished, it frees everything and returns NULL.
 
 Procedure:
+
 Initial call.
 
 a. The file is open and the buffer is empty.
@@ -65,6 +66,7 @@ It uses a temporary buffer to manage the read operation.
 It reads until it finds a newline (\n). Returns the updated buffer.
 
 Procedure:
+
 a. The buffer is empty or contains partial data.
 b. The function allocates a temporary buffer and reads a block of data.
 c. The data is merged with what’s already in buff_data.
@@ -76,6 +78,7 @@ It uses read() to get data and adds it to the main buffer.
 If \n is found, the loop ends.
 
 Procedure:
+
 a. First cycle:
 buff_data is empty.
 A chunk of the file is read and stored.
