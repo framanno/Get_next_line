@@ -20,6 +20,7 @@ This code implements the get_next_line function, which reads a line of text from
 ----------------------------------------------------------------------------------------------------------------
 					EXPLANATION WITH A METAPHORE
 Metaphor: The Librarian and the Giant Book
+
 Imagine you are a librarian who has to read a very large book (the file) aloud, but you can only read a limited number of characters at a time (BUFFER_SIZE). Additionally, you have a chalkboard on which you can write the words already read but not yet spoken aloud (buff_data).
 
 Your goal is to read the book line by line and deliver each complete line to the listener. However, you might not immediately find a complete sentence that is ready to read, so you must keep track of what you’ve read so far and complete it in the next reading.
