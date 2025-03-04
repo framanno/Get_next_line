@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:25:39 by fmanno            #+#    #+#             */
-/*   Updated: 2025/03/04 09:04:14 by root             ###   ########.fr       */
+/*   Updated: 2025/03/04 09:06:41 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ char	*get_full_line(char **buff_data)
 	*buff_data = leftover_data;
 	return (line);
 }
+/*
 int main(void)
 {
     int fd;
@@ -133,3 +134,4 @@ int main(void)
 
     return (0);
 }
+*/

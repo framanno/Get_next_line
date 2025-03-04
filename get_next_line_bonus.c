@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:26:14 by fmanno            #+#    #+#             */
-/*   Updated: 2025/03/04 08:59:45 by root             ###   ########.fr       */
+/*   Updated: 2025/03/04 09:06:58 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	*get_full_line(char **buff_data)
 	*buff_data = leftover_data;
 	return (line);
 }
-
+/*
 int main(void)
 {
     int fd1, fd2, fd3;
@@ -150,3 +150,4 @@ int main(void)
     printf("===== FINE DEL TEST =====\n");
     return (0);
 }
+	*/
