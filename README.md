@@ -174,7 +174,3 @@ If there’s leftover data in the buffer after extracting a line, `leftover_data
 ### **Memory Allocation Failure**
 
 Whenever `malloc` is called, the code checks if the allocation was successful. If not, it returns `NULL` immediately, indicating an error. For instance, if `malloc` fails in `extract_line`, the function returns `NULL`.
-
----
-
-This README now provides a clear and structured overview of your project, with improved formatting and readability for GitHub users.
