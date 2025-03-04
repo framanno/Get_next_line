@@ -1,7 +1,9 @@
 # Get_next_line
 This code implements the get_next_line function, which reads a line of text from a file, one line at a time, until the end of the file.
 
-					TO TEST MANDATORY PART
+TO TEST MANDATORY PART
+
+
 1. Download the repository
 2. Open get_next_line.c
 3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function)
@@ -9,7 +11,9 @@ This code implements the get_next_line function, which reads a line of text from
 5. Compile with "gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c"
 6. Execute code "./a.out fd0.txt"
 
-					TO TEST BONUS PART
+TO TEST BONUS PART
+
+
 1. Download the repository
 2. Open get_next_line_bonus.c
 3. De-comment the main function (cancel these symbols: " /* " at the top and " */"  at the bottom of the function)
@@ -18,7 +22,9 @@ This code implements the get_next_line function, which reads a line of text from
 6. Execute code "./a.out fd1.txt fd2.txt fd3.txt"
 
 ----------------------------------------------------------------------------------------------------------------
-					EXPLANATION WITH A METAPHORE
+EXPLANATION WITH A METAPHORE
+
+
 Metaphor: The Librarian and the Giant Book
 
 Imagine you are a librarian who has to read a very large book (the file) aloud, but you can only read a limited number of characters at a time (BUFFER_SIZE). Additionally, you have a chalkboard on which you can write the words already read but not yet spoken aloud (buff_data).
@@ -37,7 +43,9 @@ get_full_line: This is the final step: clearing the chalkboard and ensuring ther
 
 ---------------------------------------------------------------------------------------------------------------
 
-					PROJECT OVERVIEW
+PROJECT OVERVIEW
+
+
 5 functions:
 1. GET_NEXT_LINE
 Calls the other functions to read the file in blocks and return one line at a time.
@@ -121,7 +129,9 @@ d. Returns the line ready for use.
 
 	Function that copies up to n characters from source string to destination string.
 
-						MEMORY ALLOCATION
+MEMORY ALLOCATION
+
+
 Static buffer array (buff_data):
 
 This array is defined as static char *buff_data[1024];, which means it is allocated once and persists for the lifetime of the program. 
