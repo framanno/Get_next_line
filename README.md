@@ -103,23 +103,23 @@ d. Returns the line ready for use.
 5 utils functions:
 1. int	ft_strlen;
 
-Function that returns the length of a string excluding the null terminator.
+	Function that returns the length of a string excluding the null terminator.
 
-3. int	*ft_strchr;
+2. int	*ft_strchr;
 
-Function that finds the first occurrance of a character in a string and returns a pointer to it, or NULL if not find.
+	Function that finds the first occurrance of a character in a string and returns a pointer to 		it, or NULL if not find.
 
-4. char	*ft_strjoin;
+3. char	*ft_strjoin;
 
-Function that joins strings with separator.
+	Function that joins strings with separator.
 
-6. har	*ft_strdup;
+4. char	*ft_strdup;
 
-Function that "duplicates" a string:  allocates memory and copies the source string to new memory.
+	Function that "duplicates" a string:  allocates memory and copies the source string to new 		memory.
 
-8. char	*ft_strncpy;
+5. char	*ft_strncpy;
 
-Function that copies up to n characters from source string to destination string.
+	Function that copies up to n characters from source string to destination string.
 
 						MEMORY ALLOCATION
 Static buffer array (buff_data):
