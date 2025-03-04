@@ -34,6 +34,7 @@ read_until_eol: This helper reads the book and waits to find a point (the \n cha
 extract_line: This assistant extracts the complete sentence from the chalkboard and writes it on a note to be delivered.
 
 get_full_line: This is the final step: clearing the chalkboard and ensuring there’s space for the next reading.
+
 ---------------------------------------------------------------------------------------------------------------
 
 					PROJECT OVERVIEW
