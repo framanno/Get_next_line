@@ -44,7 +44,7 @@ Calls the other functions to read the file in blocks and return one line at a ti
  buff_data is a temporary memory that holds data between reads.
  If the file is finished, it frees everything and returns NULL.
 
-	Procedure:
+Procedure:
 Initial call.
 
 a. The file is open and the buffer is empty.
@@ -64,7 +64,7 @@ Reads a chunk of data from the file and adds it to the existing buffer.
 It uses a temporary buffer to manage the read operation.
 It reads until it finds a newline (\n). Returns the updated buffer.
 
-	Procedure:
+Procedure:
 a. The buffer is empty or contains partial data.
 b. The function allocates a temporary buffer and reads a block of data.
 c. The data is merged with what’s already in buff_data.
@@ -75,7 +75,7 @@ Reads data in blocks until it finds \n or the end of the file.
 It uses read() to get data and adds it to the main buffer.
 If \n is found, the loop ends.
 
-	Procedure:
+Procedure:
 a. First cycle:
 buff_data is empty.
 A chunk of the file is read and stored.
@@ -97,20 +97,25 @@ b. Updates the buffer by removing the extracted line.
 c. If there’s no more data, sets the buffer to NULL.
 d. Returns the line ready for use.
 
-5 utils functions"
+5 utils functions:
 1. int	ft_strlen;
+
 Function that returns the length of a string excluding the null terminator.
 
-2. int	*ft_strchr;
+3. int	*ft_strchr;
+
 Function that finds the first occurrance of a character in a string and returns a pointer to it, or NULL if not find.
 
-3. char	*ft_strjoin;
+4. char	*ft_strjoin;
+
 Function that joins strings with separator.
 
-4. har	*ft_strdup;
+6. har	*ft_strdup;
+
 Function that "duplicates" a string:  allocates memory and copies the source string to new memory.
 
-5. char	*ft_strncpy;
+8. char	*ft_strncpy;
+
 Function that copies up to n characters from source string to destination string.
 
 						MEMORY ALLOCATION
