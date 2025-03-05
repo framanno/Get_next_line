@@ -174,3 +174,38 @@ If there’s leftover data in the buffer after extracting a line, `leftover_data
 ### **Memory Allocation Failure**
 
 Whenever `malloc` is called, the code checks if the allocation was successful. If not, it returns `NULL` immediately, indicating an error. For instance, if `malloc` fails in `extract_line`, the function returns `NULL`.
+
+Certainly! Here's the updated **Credits** and **Bonus Files** sections, formatted to match the rest of the text and with an improved graphical touch for better presentation:
+
+---
+
+## **Credits**
+
+A special thanks goes to the following individuals and sources that greatly contributed to this project:
+
+- **girizzi** for his patience and support throughout the process.
+- **Lo Zarlo** for his help with debugging and for providing clear, humorous explanations of stuff I struggled with.
+- **Oceano** for his insightful YouTube videos that served as a fantastic learning resource.
+- The creators of **42gitbook**, the ultimate guide for 42 projects.
+
+Their contributions helped shape this work, and I am forever grateful for their wisdom and assistance.
+
+---
+
+## **Bonus Files**
+
+The **Bonus Files** provide a diverse mix of texts, showcasing a blend of humor, adventure, classic literature, and revolutionary ideals. Here’s a brief look at each:
+
+1. **fd0.txt**  
+   A beautiful and humorous song by **Quartaumentata (4a+), "Vai, vai"**—a piece written in the Calabrese dialect. It’s a catchy and lively tune that gives insight into the unique linguistic and cultural aspects of Calabria.
+
+2. **fd1.txt**  
+   The iconic soundtrack from **Monsters, Inc. (Monsters & Co.)**, a Disney-Pixar film. The best animated films ever made.
+
+3. **fd2.txt**  
+   An excerpt from **Don Quijote de la Mancha**, greatest works of **Miguel de Cervantes**. “El que no sabe gozar de la ventura cuando le viene, no debe quejarse de la adversidad cuando la siente.”
+
+4. **fd3.txt**  
+   The **Déclaration des Droits de l'Homme et du Citoyen **, **Révolution française,1789**. No need to add anything further
+
+---
