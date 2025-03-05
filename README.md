@@ -21,6 +21,7 @@ This project implements the `get_next_line` function, which reads a line of text
    ./mandatory_test fd0.txt
    ```
 
+
 ### **Bonus Part**
 
 1. Download the repository.
@@ -33,7 +34,7 @@ This project implements the `get_next_line` function, which reads a line of text
    ```
 6. Execute the code:
    ```bash
-./bonus_test fd1.txt fd2.txt fd3.txt
+   ./bonus_test fd1.txt fd2.txt fd3.txt
    ```
 
 ---
@@ -54,19 +55,9 @@ Just like a careful librarian, get_next_line ensures every line is delivered per
 
 ### 1. `get_next_line`
 
-This function calls the other functions to read the file in blocks and return one line at a time. `buff_data` is a temporary memory that holds data between reads. When the file is finished, it frees everything and returns `NULL`.
+**Purpose**: "Reads a line from a file."
 
-- **First Call:**
-  - The file is open, and the buffer is empty.
-  - `read_and_buffer` fills `buff_data` with the first chunk of data.
-  
-- **Next Call:**
-  - `get_full_line` extracts the first complete line.
-  - The buffer keeps the remaining data for the next read.
-  
-- **When the File is Finished:**
-  - `read_and_buffer` no longer reads data.
-  - `buff_data` is freed, and `get_next_line` returns `NULL`.
+This function calls the other functions to read the file in blocks and return one line at a time. `buff_data` is a temporary memory that holds data between reads. When the file is finished, it frees everything and returns `NULL`.
 
 ---
 
@@ -76,12 +67,6 @@ This function calls the other functions to read the file in blocks and return on
 
 This function reads a chunk of data from the file and adds it to the existing buffer. It uses a temporary buffer to manage the read operation. It reads until it finds a newline (`\n`). The updated buffer is returned.
 
-- **Steps:**
-  - If the buffer is empty or contains partial data, it allocates a temporary buffer and reads a block of data.
-  - The data is merged with what’s already in `buff_data`.
-  - The temporary buffer is freed.
-  - The updated buffer is returned.
-
 ---
 
 ### 3. `read_until_eol`
@@ -90,21 +75,13 @@ This function reads a chunk of data from the file and adds it to the existing bu
 
 This function uses `read()` to get data and adds it to the main buffer. If `\n` is found, the loop ends.
 
-- **Steps:**
-  - **First Cycle:** `buff_data` is empty, a chunk of the file is read and stored.
-  - **Subsequent Cycles:** Check for `\n`. If not found, read another chunk and add it.
-  - **When `\n` is Found:** The cycle ends, and the buffer with the complete or partial line is returned.
-
 ---
 
 ### 4. `extract_line`
 
 **Purpose:** Separates the first complete line from the buffer.
 
-- **Steps:**
-  - Finds the first `\n`.
-  - If there’s data after the first line, it saves it as `leftover_data`.
-  - Returns the line and keeps the remaining data intact.
+This function searches for the first occurrence of `\n` in the buffer. If there is any remaining data after the newline, it stores it as leftover_data. The function then returns the extracted line and keeps the remaining data intact for the next read operation.
 
 ---
 
@@ -112,19 +89,63 @@ This function uses `read()` to get data and adds it to the main buffer. If `\n` 
 
 **Purpose:** Completes the process by extracting a full line.
 
-- **Steps:**
-  - Calls `extract_line` to get the complete line.
-  - Updates the buffer by removing the extracted line.
-  - If there’s no more data, sets the buffer to `NULL`.
-  - Returns the line, ready for use.
+This function calls extract_line to retrieve the complete line from the buffer. It then updates the buffer by removing the extracted line. Finally, it returns the extracted line, ready for use.
 
 ---
 
-## **Meaning of `bytes_read` and `total_bytes_read` Values**
+## **Execution flow**
 
-- **`bytes_read == -1`:** Indicates that an error occurred during the read operation.  
-- **`bytes_read == 0`:** Indicates that the end of the file (EOF) has been reached.  
-- **`bytes_read > 0`:** Indicates that at least one byte was successfully read.  
+**Start**
+
+1. The `get_next_line()` function is called with a file descriptor `fd`.
+
+**get_next_line()**
+
+2. The first thing `get_next_line()` does is check if the file descriptor `fd` is valid (i.e., between 0 and 1023) and if `BUFFER_SIZE > 0`. If it’s not valid, the function returns `NULL`.
+
+**read_and_buffer()**
+
+3. The `read_and_buffer()` function is called from within `get_next_line()`. This function is responsible for reading data from the file and storing it in the `buff_data` buffer.
+4. A temporary buffer (`temp_buffer`) is allocated to read the data, and the `read_until_eol()` function is called to fill `buff_data` with the read data.
+
+**read_until_eol()**
+
+5. The `read_until_eol()` function starts reading data from the file into the temporary buffer (`temp_buffer`) until it finds a newline character (`\n`) or the end of the file (EOF).
+6. It continues reading in blocks of data until one of the following conditions is met:
+   - A newline character (`\n`) is found, which means a complete line has been found.
+   - The end of the file (EOF) is reached.
+7. The newly read data is added to `buff_data`, and the function returns.
+
+**Return to `read_and_buffer()`**
+
+8. After `read_until_eol()` finishes, the function returns to `read_and_buffer()` to check if the read operation was successful. If no data was read (`bytes_read == 0`) or there was an error (`bytes_read == -1`), it returns `NULL`.
+
+**get_full_line()**
+
+9. Once `buff_data` contains data (either a complete or partial line), the `get_full_line()` function is called from within `get_next_line()`.
+
+**get_full_line()** then calls `extract_line()` to extract the first complete line from `buff_data`.
+
+**extract_line()**
+
+10. The `extract_line()` function looks for the first newline (`\n`) character in `buff_data`.
+11. If a newline is found, the function allocates memory for the line and copies all the characters from `buff_data` up to and including the newline.
+12. If there is remaining data in `buff_data` after the extracted line, it saves it into `leftover_data` for the next read cycle.
+13. The function returns the extracted line and also sets `leftover_data` for the remaining data.
+
+**Return to `get_full_line()`**
+
+14. The extracted line from `buff_data` is returned to `get_next_line()`.
+15. If there’s remaining data in `buff_data`, the memory is freed and the buffer is updated to point to `leftover_data`.
+16. If `buff_data` is empty or `NULL`, the buffer is set to `NULL`, and the function returns `NULL`.
+
+**Return to `get_next_line()`**
+
+17. The `get_next_line()` function returns the extracted line to the caller.
+
+**Repetition (if needed)**
+
+18. If `get_next_line()` is called again, it continues from where it left off with the data in `buff_data`, trying to read and return the next line until the end of the file (EOF) is reached.
 
 ---
 
@@ -144,6 +165,14 @@ This function uses `read()` to get data and adds it to the main buffer. If `\n` 
 
 5. **`char *ft_strncpy`**
    - Copies up to `n` characters from the source string to the destination string.
+
+---
+
+## **Meaning of `bytes_read` and `total_bytes_read` Values**
+
+- **`== -1`:** Indicates that an error occurred during the read operation.  
+- **`== 0`:** Indicates that the end of the file (EOF) has been reached.  
+- **`> 0`:** Indicates that at least one byte was successfully read.  
 
 ---
 
@@ -184,8 +213,6 @@ If there’s leftover data in the buffer after extracting a line, `leftover_data
 ### **Memory Allocation Failure**
 
 Whenever `malloc` is called, the code checks if the allocation was successful. If not, it returns `NULL` immediately, indicating an error. For instance, if `malloc` fails in `extract_line`, the function returns `NULL`.
-
-Certainly! Here's the updated **Credits** and **Bonus Files** sections, formatted to match the rest of the text and with an improved graphical touch for better presentation:
 
 ---
 
