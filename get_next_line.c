@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:25:39 by fmanno            #+#    #+#             */
-/*   Updated: 2025/03/04 11:11:29 by root             ###   ########.fr       */
+/*   Updated: 2025/03/05 10:41:48 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-//read and put in the buffer
+
 char	*read_and_buffer(int fd, char *buff_data)
 {
 	char	*temp_buffer;
@@ -85,7 +85,10 @@ char	*extract_line(char *buff_data, char **leftover_data)
 		return (NULL);
 	ft_strncpy(line, buff_data, line_len);
 	line[line_len] = '\0';
-	buff_len = ft_strlen(buff_data);
+	if (!buff_data)
+		return (NULL);
+	else
+		buff_len = ft_strlen(buff_data);
 	if (buff_len > line_len)
 		*leftover_data = ft_strdup(buff_data + line_len);
 	else

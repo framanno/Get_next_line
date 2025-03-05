@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fmanno <fmanno@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:26:14 by fmanno            #+#    #+#             */
-/*   Updated: 2025/03/04 09:06:58 by root             ###   ########.fr       */
+/*   Updated: 2025/03/05 11:11:18 by fmanno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ char	*read_and_buffer(int fd, char *buff_data)
 }
 
 int	read_until_eol(int fd, char *temp_buffer, char **buff_data)
-
 {
 	int		bytes_read;
 	char	*merged_data;
@@ -150,4 +149,4 @@ int main(void)
     printf("===== FINE DEL TEST =====\n");
     return (0);
 }
-	*/
+*/
