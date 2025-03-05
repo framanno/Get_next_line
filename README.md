@@ -194,7 +194,7 @@ Their contributions helped shape this work, and I am forever grateful for their 
 
 ## **Bonus Files**
 
-The **Bonus Files** provide a diverse mix of texts, showcasing a blend of humor, adventure, classic literature, and revolutionary ideals. Here’s a brief look at each:
+The **Bonus Files** reveal more about me and my background. Here’s a brief look at each:
 
 1. **fd0.txt**  
    A beautiful and humorous song by **Quartaumentata (4a+), "Vai, vai"**—a piece written in the Calabrese dialect. It’s a catchy and lively tune that gives insight into the unique linguistic and cultural aspects of Calabria.
