@@ -14,11 +14,11 @@ This project implements the `get_next_line` function, which reads a line of text
 4. Save the file.
 5. Compile with:
    ```bash
-   gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c
+   gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c -o mandatory_test
    ```
 6. Execute the code:
    ```bash
-   ./a.out fd0.txt
+   ./mandatory_test fd0.txt
    ```
 
 ### **Bonus Part**
@@ -29,11 +29,11 @@ This project implements the `get_next_line` function, which reads a line of text
 4. Save the file.
 5. Compile with:
    ```bash
-   gcc -Wall -Werror -Wextra get_next_line_bonus.c get_next_line_utils_bonus.c
+   gcc -Wall -Werror -Wextra get_next_line_bonus.c get_next_line_utils_bonus.c -o bonus_test
    ```
 6. Execute the code:
    ```bash
-   ./a.out fd1.txt fd2.txt fd3.txt
+./bonus_test fd1.txt fd2.txt fd3.txt
    ```
 
 ---
