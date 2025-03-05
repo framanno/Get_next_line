@@ -1,10 +1,10 @@
-# **get_next_line**
+# **get_next_line**  📄
 
 This project implements the `get_next_line` function, which reads a line of text from a file, one line at a time, until the end of the file.
 
 ---
 
-## **Testing**
+## **Testing**  🧪
 
 ### **Mandatory Part**
 
@@ -39,7 +39,7 @@ This project implements the `get_next_line` function, which reads a line of text
 
 ---
 
-## **Explanation with a Metaphor**
+## **Explanation with a Metaphor** 📚
 
 **The Librarian and the Giant Book**
 
@@ -51,7 +51,7 @@ Just like a careful librarian, get_next_line ensures every line is delivered per
 
 ---
 
-**Functions:**
+**Functions:** 🛠️
 
 ### 1. `get_next_line`
 
@@ -93,7 +93,7 @@ This function calls extract_line to retrieve the complete line from the buffer. 
 
 ---
 
-## **Execution flow**
+## **Execution flow** 🔄
 
 **Start**
 
@@ -149,7 +149,7 @@ This function calls extract_line to retrieve the complete line from the buffer. 
 
 ---
 
-## **Utility Functions**
+## **Utility Functions** 🔧
 
 1. **`int ft_strlen`**
    - Returns the length of a string excluding the null terminator.
@@ -176,7 +176,7 @@ This function calls extract_line to retrieve the complete line from the buffer. 
 
 ---
 
-## **Memory Management**
+## **Memory Management** 💾 
 
 ### **Static Buffer Array (`buff_data`)**
 
@@ -208,7 +208,7 @@ If there’s leftover data in the buffer after extracting a line, `leftover_data
 
 ---
 
-## **Error Handling**
+## **Error Handling** ⚠️
 
 ### **Memory Allocation Failure**
 
@@ -216,7 +216,7 @@ Whenever `malloc` is called, the code checks if the allocation was successful. I
 
 ---
 
-## **Credits**
+## **Credits** 🙏
 
 A special thanks goes to the following individuals and sources that greatly contributed to this project:
 
@@ -228,9 +228,9 @@ A special thanks goes to the following individuals and sources that greatly cont
 Their support and insights were invaluable for this project—huge thanks to them all! 🙏
 ---
 
-## **Bonus Files**
+## **Text Files for bonus testing**  📖
 
-The **Bonus Files** reveal more about me and my background. Here’s a brief look at each:
+These **Text files** reveal more about me and my background. Here’s a brief look at each:
 
 1. **fd0.txt**  
    A beautiful and humorous song by **Quartaumentata (4a+), "Vai, vai"**—a piece written in the Calabrese dialect. It’s a catchy and lively tune that gives insight into the unique linguistic and cultural aspects of Calabria.
