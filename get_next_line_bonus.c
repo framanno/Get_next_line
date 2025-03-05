@@ -6,7 +6,7 @@
 /*   By: fmanno <fmanno@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:26:14 by fmanno            #+#    #+#             */
-/*   Updated: 2025/03/05 11:11:18 by fmanno           ###   ########.fr       */
+/*   Updated: 2025/03/05 16:43:46 by fmanno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ char	*get_next_line(int fd)
 char	*read_and_buffer(int fd, char *buff_data)
 {
 	char	*temp_buffer;
-	int		bytes_read;
+	int		total_bytes_read;
 
 	temp_buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!temp_buffer)
 		return (NULL);
-	bytes_read = read_until_eol(fd, temp_buffer, &buff_data);
+	total_bytes_read = read_until_eol(fd, temp_buffer, &buff_data);
 	free(temp_buffer);
-	if (bytes_read == -1)
+	if (total_bytes_read == -1)
 		return (NULL);
 	else
 		return (buff_data);
