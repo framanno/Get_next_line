@@ -46,6 +46,8 @@ Imagine you are a librarian who has to read a very large book (the file) aloud, 
 
 Your goal is to read the book line by line and deliver each complete line to the listener. However, you might not immediately find a complete sentence that is ready to read, so you must keep track of what you’ve read so far and complete it in the next reading.
 
+Just like a careful librarian, get_next_line ensures every line is delivered perfectly, without losing a single word.
+
 ---
 
 **Functions:**
@@ -115,6 +117,14 @@ This function uses `read()` to get data and adds it to the main buffer. If `\n` 
   - Updates the buffer by removing the extracted line.
   - If there’s no more data, sets the buffer to `NULL`.
   - Returns the line, ready for use.
+
+---
+
+## **Meaning of `bytes_read` and `total_bytes_read` Values**
+
+- **`bytes_read == -1`:** Indicates that an error occurred during the read operation.  
+- **`bytes_read == 0`:** Indicates that the end of the file (EOF) has been reached.  
+- **`bytes_read > 0`:** Indicates that at least one byte was successfully read.  
 
 ---
 
@@ -188,8 +198,7 @@ A special thanks goes to the following individuals and sources that greatly cont
 - **Oceano** for his insightful YouTube videos that served as a fantastic learning resource.
 - The creators of **42gitbook**, the ultimate guide for 42 projects.
 
-Their contributions helped shape this work, and I am forever grateful for their wisdom and assistance.
-
+Their support and insights were invaluable for this project—huge thanks to them all! 🙏
 ---
 
 ## **Bonus Files**
@@ -203,9 +212,9 @@ The **Bonus Files** reveal more about me and my background. Here’s a brief loo
    The iconic soundtrack from **Monsters, Inc. (Monsters & Co.)**, a Disney-Pixar film. The best animated films ever made.
 
 3. **fd2.txt**  
-   An excerpt from **Don Quijote de la Mancha**, greatest works of **Miguel de Cervantes**. “El que no sabe gozar de la ventura cuando le viene, no debe quejarse de la adversidad cuando la siente.”
+   An excerpt from **Don Quijote de la Mancha**, by **Miguel de Cervantes**. “El que no sabe gozar de la ventura cuando le viene, no debe quejarse de la adversidad cuando la siente.”
 
 4. **fd3.txt**  
-   The **Déclaration des Droits de l'Homme et du Citoyen **, **Révolution française,1789**. No need to add anything further
+   **Déclaration des Droits de l'Homme et du Citoyen - Révolution française, 1789**. No need to add anything further
 
 ---
